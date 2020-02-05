@@ -1,7 +1,4 @@
 *** Settings ***
-Library           Process
-Library           OperatingSystem
-Library           SeleniumLibrary
 
 *** Variables ***
 

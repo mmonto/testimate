@@ -6,7 +6,7 @@ Suite Setup
 Test Timeout      15 minutes
 Library           OperatingSystem
 Library           Process
-Library           SeleniumLibrary
+#Library           SeleniumLibrary
 Variables         variables.py
 Resource          resource_keywords.robot
 
@@ -17,8 +17,8 @@ Connect to Testimate
     [Documentation]    Connect to Testimate website.
     [Tags]    TC001
     [Timeout]    3 minutes
-    Open Browser    ${URL}    ${BROWSER}
+    #Open Browser    ${URL}    ${BROWSER}
     Validate page
-    Close Browser
+    #Close Browser
 
 
