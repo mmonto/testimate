@@ -1,5 +1,5 @@
 *** Settings ***
 
 *** Variables ***
-${PALVELUT_BUTTON}      //span[contains(text(),'Palvelut')]
+${PALVELUT_BUTTON}      xpath://span[contains(text(),"Palvelut")]
 

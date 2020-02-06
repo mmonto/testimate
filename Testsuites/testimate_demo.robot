@@ -2,8 +2,9 @@
 Documentation     Testimate demo testsuite.
 ...
 ...               Pre-requirements: ..
-Suite Setup
-Test Timeout      1 minutes
+Suite Setup       Suite Setup
+Suite Teardown    Suite Teardown
+Test Timeout      5 minutes
 
 Resource          ../Resources/library.robot
 
@@ -11,10 +12,12 @@ Resource          ../Resources/library.robot
 Connect to Testimate
     [Documentation]    Connect to Testimate website.
     [Tags]    TC001
+    [Setup]     Test Case Setup
     [Timeout]    3 minutes
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    [Teardown]      Test Case Teardown
     Validate page
-    Close Browser
+
+
+
 
 
