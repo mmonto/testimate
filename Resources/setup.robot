@@ -7,7 +7,6 @@ Suite Setup
 Suite Teardown
     Close All Browsers
 
-
 Test Case Setup
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window

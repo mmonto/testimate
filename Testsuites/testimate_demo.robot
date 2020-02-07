@@ -6,11 +6,7 @@ Suite Setup       Suite Setup
 Suite Teardown    Suite Teardown
 Test Timeout      5 minutes
 
-Resource          library.robot
-
-*** Variables ***
-${URL}     http://www.testimate.fi
-${BROWSER}     chrome
+Resource          ../Resources/library.robot
 
 *** Test Cases ***
 Connect to Testimate
