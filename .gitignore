@@ -1,0 +1,6 @@
+*.
+.idea/
+Results/
+docker/results/
+kubernetes/
+venv/
