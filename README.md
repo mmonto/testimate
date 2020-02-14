@@ -3,10 +3,11 @@ Connecting to Testimate webpage with Chrome or Firefox browser.
 
 # PRE-REQUIREMENTS
 1. DOCKER DESKTOP installed: https://docs.docker.com/docker-for-windows/install/
+    note: check from docker desktop "settings - reources - file sharing" that your local C: drive is shared to containers use.
 2. GIT SCM installed: https://git-scm.com/downloads
 
 # RUNNING TESTS
-goto your local directory C:\repo (create if not existing) with your Gitbash console
+goto your local directory C:\repo (create if not existing) with your Gitbash console and
 give command "git clone https://github.com/mmonto/testimate.git" 
 
 then goto your local directory C:\repo\testimate
@@ -41,5 +42,7 @@ docker run \
 	-e ROBOT_OPTIONS="--loglevel INFO" \
     ppodgorsek/robot-framework:latest
 
+If you want to run tests from another folders, just updated the folder paths with -v parameter as shown in 
+the example run sh file. 
 
 Godspeed. 
