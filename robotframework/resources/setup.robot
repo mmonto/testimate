@@ -9,7 +9,10 @@ Suite Teardown
 
 Test Case Setup
     Open Browser    ${URL}    ${BROWSER}
+    Set Window Size     1024    768
     Maximize Browser Window
+    Title Should be     ${title}
+
 
 Test Case Teardown
     Close Browser

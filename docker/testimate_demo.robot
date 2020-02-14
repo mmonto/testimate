@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Testimate demo testsuite.
+Documentation     Testimate Docker demo testsuite.
 ...
 ...               Pre-requirements: ..
 Suite Setup       Suite Setup
@@ -9,9 +9,9 @@ Test Timeout      5 minutes
 Resource          library.robot
 
 *** Test Cases ***
-Connect to Testimate
+Connect to Testimate webpage
     [Documentation]    Connect to Testimate website.
-    [Tags]    TC001
+    [Tags]    DOCKER001
     [Setup]     Test Case Setup
     [Timeout]    3 minutes
     [Teardown]      Test Case Teardown

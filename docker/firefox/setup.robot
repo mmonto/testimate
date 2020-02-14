@@ -10,6 +10,7 @@ Suite Teardown
 Test Case Setup
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Log to console      Current browser is: ${BROWSER}
 
 Test Case Teardown
     Close Browser

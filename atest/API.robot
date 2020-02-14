@@ -15,28 +15,28 @@ Documentation   Test data can be read from variables and files.
 ...             The persistence of the created instances is the test suite.
 ...             Use keyword `Rest instances` to output the created instances.
 Resource         resource_keywords_api.robot
-
+Suite Setup     Suite Setup
 
 *** Variables ***
 ${json}         { "id": 11, "name": "Gil Alexander" }
 &{dict}         name=Julie Langford
-${resource_1}    /users/1
+@{list }        Matti       Teppo
 
 
 *** Test Cases ***
 GET an existing user, notice how the schema gets more accurate
     [Tags]      TC001
-    [Setup]
-    [Documentation]     Demo testcase
-    GET         ${resource_1}                  timeout=2.5
-    #Output schema   response body
+    [Setup]     FakerLibrary City Generation
+    [Documentation]     Demo testcase for API interface
+    GET         /users/1                  timeout=3.0
+    Output schema    response body   ${OUTPUTDIR}/schema_demo.json
     Output      request
     Output      response             # values are fully optional
     Integer     response status           200
     Integer     response body id          1
     String      response body name        Leanne Graham
     String      response body username        Bret
-    Missing     response body moving       # fails if property moving exists
+    Missing     response body ${city}       # fails if property exists
     [Teardown]      Teardown
 
 GET existing users, use JSONPath for very short but powerful queries
@@ -48,9 +48,15 @@ GET existing users, use JSONPath for very short but powerful queries
     [Teardown]  Output  $[*].email        # outputs all emails as an array
 
 POST with valid params to create a new user, can be output to a file
-    POST        /users                    ${json}
-    Integer     response status           201
-    [Teardown]  Output  response body     ${OUTPUTDIR}/new_user.demo.json
+    FOR    ${index}    IN RANGE   1    2
+        FakerLibrary Data Generation
+        POST        /users              { "id": 11, "name": "${data}", "email": "mikko.monto@testimate.fi" }    timeout=5.0
+        Integer     response status           201
+        Output    response
+        Response Validations
+        Output  response body     ${OUTPUTDIR}/new_user_[${data}].json
+    END
+    [Teardown]  Teardown
 
 PUT with valid params to update the existing user, values matter here
     PUT         /users/2                  { "isCoding": true }

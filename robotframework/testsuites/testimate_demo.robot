@@ -6,7 +6,7 @@ Suite Setup       Suite Setup
 Suite Teardown    Suite Teardown
 Test Timeout      2 minutes
 
-Resource          ../Resources/library.robot
+Resource          ../resources/library.robot
 
 *** Test Cases ***
 Connect to Testimate
@@ -16,7 +16,10 @@ Connect to Testimate
     [Timeout]    2 minutes
     [Teardown]      Test Case Teardown
     #Test Link validity
-    Validate page
+    #Log Many    @{WORDS}[1]
+    Validate page    Input
+    Siirry Mobiilitestaus sivulle       Mobiilisovellusten testaus
+    Go Back
 
 
 
