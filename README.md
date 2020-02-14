@@ -1,5 +1,4 @@
-# testimate
-Robot Framework demo with Docker.
+# Robot Framework demo with Docker.
 Connecting to Testimate webpage with Chrome or Firefox browser. 
 
 # PRE-REQUIREMENTS
