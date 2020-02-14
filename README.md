@@ -22,4 +22,25 @@ give command "./run_robot.sh firefox
 Demo is using docker image:
 https://hub.docker.com/r/ppodgorsek/robot-framework
 
+# RUN ROBOT
+
+if tests are not found, please check your path settings in run_robot.sh file (in case you are using 
+different folder than C:\repo)
+
+less run_robot.sh 
+
+BROWSER=$1
+
+docker run \
+  -v C:/repo/testimate/robotframework/testsuites:/opt/robotframework/tests:Z \
+	-v C:/repo/testimate/robotframework/resources:/opt/robotframework/resources:Z \
+	-v C:/repo/testimate/robotframework/variables:/opt/robotframework/variables:Z \
+	-v C:/repo/testimate/robotframework/locators:/opt/robotframework/locators:Z \
+	-v C:/repo/testimate/robotframework/reports:/opt/robotframework/reports:Z \
+    -e BROWSER=$BROWSER \
+	--shm-size=1g \
+	-e ROBOT_OPTIONS="--loglevel INFO" \
+    ppodgorsek/robot-framework:latest
+
+
 Godspeed. 
