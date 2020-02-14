@@ -3,14 +3,15 @@ Connecting to Testimate webpage with Chrome or Firefox browser.
 
 # PRE-REQUIREMENTS
 1. DOCKER DESKTOP installed: https://docs.docker.com/docker-for-windows/install/
-    note: check from docker desktop "settings - reources - file sharing" that your local C: drive is shared to containers use.
-2. GIT SCM installed: https://git-scm.com/downloads
+   note: check from docker desktop "settings - reources - file sharing" that your local C: drive is shared for containers use.
+
+2. GIT SCM installed: https://git-scm.com/downloads for Gitbash console. 
 
 # RUNNING TESTS
 goto your local directory C:\repo (create if not existing) with your Gitbash console and
 give command "git clone https://github.com/mmonto/testimate.git" 
 
-then goto your local directory C:\repo\testimate
+and then goto your local directory C:\repo\testimate
 
 # RUN TEST WITH CHROME
 give command "./run_robot.sh chrome
