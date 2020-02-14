@@ -1,5 +1,6 @@
 # testimate
-Robot Framework demo with Docker
+Robot Framework demo with Docker.
+Connecting to Testimate webpage with Chrome or Firefox browser. 
 
 # PRE-REQUIREMENTS
 1. DOCKER DESKTOP installed: https://docs.docker.com/docker-for-windows/install/
@@ -17,6 +18,7 @@ give command "./run_robot.sh chrome
 # RUN TEST WITH FIREFOX
 give command "./run_robot.sh firefox
 
+# DOCKER
 Demo is using docker image:
 https://hub.docker.com/r/ppodgorsek/robot-framework
 
