@@ -1,4 +1,3 @@
-# Using Chromium
 BROWSER=$1
 
 docker run \
